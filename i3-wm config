@@ -272,3 +272,4 @@ exec_always --no-startup-id ~/scripts/wmctrl &
 bindsym $mod+i exec --no-startup-id tilix -e sudo /abif-master/abif_offline
 bindsym $mod+o exec --no-startup-id "sudo cnchi &"
 exec --no-startup-id "dconf load / < tilix.dconf"
+exec --no-startup-id VBoxClient-all &
