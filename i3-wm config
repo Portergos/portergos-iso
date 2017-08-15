@@ -151,7 +151,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-### I3BAR INÍCIO DESATIVADO
+# I3BAR DEACTIVATED
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -162,60 +162,43 @@ bindsym $mod+r mode "resize"
 # bar toggle, hide or show 
 # bindsym $mod+m bar mode toggle
 
-### I3BAR FIM
+### CUSTOM
 
-### BASE INICIALIZAÇÃO INÍCIO
-
-# Criar a configuração do arquivo e salvar, marcar para executar conforme abaixo
+# Load resolution (created with arandr)
 exec_always --no-startup-id ~/.screenlayout/1280x720.sh &
 
-### BASE INIALIZAÇÃO FIM
-
-### EXTRAS INICIALIZAÇÃO INÍCIO
-
-# Para ter um histórico de copy/paste Ctrl+C Ctrl+V
-# instalar parcellite
+# start parcellite
 # exec --no-startup-id parcellite &
 
-# tint2, único painel com função auto-hide funcionando no i3 wm
-
+# tint2, only panel with auti-hide function working on i3 wm
 # exec --no-startup-id tint2 &
+
+# Systemtray
 exec --no-startup-id volumeicon &
 # exec --no-startup-id pamac-tray &
 # exec --no-startup-id caffeine &
 
-# Instalar sudo pacman -S oblogout
-# configurar /etc/logout.conf, facilita para desligar o pc
+# Oblogout for logoff options - config /etc/logout.conf
 bindsym $mod+Shift+e exec oblogout
 
-# o systemtray do mate funciona, após carregar a barra e adicionar o applet, tem que iniciar os serviços.
-# Não pode usar o stalonetray simultaneamente
-# exec --no-startup-id mate-panel &
-# bindsym Control+m exec mate-panel &
-# exec --no-startup-id lxpanel &
-# bindsym Control+l exec lxpanel & mode toggle
-
-#conky
+# conky-manager
 exec --no-startup-id conky -c ~/.conky/i3/Gotham &
 #exec --no-startup-id conky -c ~/.conky/i3\ Green\ Apple\ Desktop\ Background/Gotham &
 exec --no-startup-id conky -c ~/.conky/i3_shortcuts/Gotham &
 
 # exec --no-startup-id redshift &
 exec --no-startup-id easystroke &
-bindsym Control+e exec --no-startup-id easystroke & # abre easystroke
-bindsym Control+Shift+e exec --no-startup-id pkill easystroke # fecha easystroke
+bindsym Control+e exec --no-startup-id easystroke & # open easystroke
+bindsym Control+Shift+e exec --no-startup-id pkill easystroke # close easystroke
 
-# instalar sudo pacman -S polkit-gnome gnome-keyring
+# sudo pacman -S polkit-gnome gnome-keyring
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 
-# Para ligar numlock
+# Turn on numlock
 # sudo pacman -S numlockx
 exec numlockx &
-# exec --no-startup-id ~/scripts/numlock.sh
 
-### EXTRAS INICIALIZAÇÃO FIM
-
-### ÁUDIO INÍCIO
+### ÁUDIO START
 
 # Ctrl+ and Ctrl- to change volume
 bindsym --release Control+KP_Add exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
@@ -232,92 +215,52 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-### ÁUDIO FIM
+### ÁUDIO END
 
-### TERMINAIS INÍCIO
-
-# Instalar terminator sudo pacman -S terminator
-# terminator é mod+enter
+### TERMINAL
 bindsym F12 exec --no-startup-id "tilix --quake"
 bindsym $mod+KP_Enter exec tilix
 bindsym $mod+Return exec tilix
 
-### TERMINAIS FIM
-
-### OUTROS INÍCIO
-
-# Opera 
-# bindsym $mod+backslash exec --no-startup-id kdocker opera
-
-# Thunderbird
-# exec --no-startup-id kdocker thunderbird
-
-# Abrir esse arquivo de configuração com gedit
+# Open this config file with tes]xt editor
 bindsym $mod+g exec --no-startup-id "leafpad ~/.config/i3/config"
-
-
-# instalar morc_menu
-# dá pra instalar o dmenu-manjaro para habilitar cliques com o mouse para o morc_menu
-# bindsym $mod+z exec morc_menu
 
 # XFCE4 panel (appear/disappear)
 bindsym $mod+z exec ~/scripts/xfce4.sh &
 exec --no-startup-id ~/scripts/xfce4.sh &
 
-# Tirar som beep (ocorre pelo menos ao pressionar PrintScreen)
+# Remove beep sound (when PrintScreen is pressed)
 exec_always --no-startup-id xset -b &
 
-# PrintScreen - utiliza o programa scrot, a imagem é salva automaticamente na pasta screenshots (precisa criar a pasta)
+# PrintScreen - for scrot, automatically save image (must create folder first)
 # bindsym Print exec --no-startup-id /usr/share/playonlinux/playonlinux --run "Lightshot" %F
 bindsym $mod+Print exec --no-startup-id "scrot '%F_%H.%M.%S.png' -e 'mv $f ~/screenshots/'"
 
-# Para criar atalhos .desktop como arquivo de texto manualmente
-# O arquivo atalho.sh abre um modelo de atalho e o terminal para lançar a criação do arquivo
-# bindsym $mod+n exec --no-startup-id atalho.sh
-# /home/fernando/.xscreensaver
-
-# Aumentar a fonte do lxpanel e do mate-panel
-# lxappearence > aba widget > font 
-
-# Fazer o mouse desaparecer - Bom para players de série onde o mouse não some
-# instalar unclutter -idle 1
-# exec --no-startup-id unclutter -idle 1 &
-# bindsym $mod+Print exec --no-startup-id unclutter -idle 1 &
-
 bindsym $mod+p exec --no-startup-id xrandr &> /dev/null && prlcc &
 
-# kdocker, manda arquivos para system tray
-# bindsym Control+Shift+m exec gtk-launch /usr/share/applications/kdocker &
-
-## lxsession
+# lxsession
 # exec --no-startup-id lxsession
-exec --no-startup-id lxpolkit &
-## ao ativá-lo é possível alterar mais configurações dos themes e usar os .desktop das pastas abaixo
-## /etc/xdg/autostart
-## ~/.config/autostart
+exec --no-startup-id lxpolkit & #alternative to gnome-polkit
+## When lxsession is executed allows to use .desktop files from:
+# /etc/xdg/autostart
+# ~/.config/autostart
 
-
-### OUTROS FIM
-
+# Some screen tearings may happen right after login manager
 exec sleep 15
-# Instalar compton (executar) e paranoid (configurar) para habilitar transparência
-# sudo pacman -S compton paranoid
 exec --no-startup-id compton &
 exec_always --no-startup-id feh --bg-scale /etc/antergos/Antergos_pics/wallpaper.jpg &
 
-###
-### EXPLICAÇÕES
-# bindsym > código para informar que serão usadas teclas de atalho
-# é possível mapear o teclado inteiro com "xmodmap -pke"
-# teclas que não respondem ao keybinding configurado devem ter a opção "--release"
-# Exemplo: bindsym --release Print exec --no-startup-id scrot
-# exec > determina que o processo/comando a seguir deve ser executado
-# exec_always > deve ser executado sempre que atualizar/reiniciar i3 wm
-# --no-startup-id > evita o bug do mouse em espera ao iniciar a sessão
+
+### TIPS
+# bindsym > code to use keyboard shortcuts
+# Map the keyboard with "xmodmap -pke"
+# If keys are not working is possible to use the option "--release"
+# Exemple: bindsym --release Print exec --no-startup-id scrot
+# exec > determine process/command to be executed
+# exec_always > process/command is executed everytime i3 is restarted
+# --no-startup-id > avoid the mouse with "working icon" at session's start
 
 bindsym $mod+c exec --no-startup-id caja
-bindsym $mod+i exec --no-startup-id tilix -e sudo /abif-master/abif_offline
-bindsym $mod+o exec --no-startup-id "sudo cnchi &"
 
 assign [class="Xfdesktop"] workspace99
 bindsym $mod+x exec --no-startup-id xfdesktop --menu
@@ -325,8 +268,7 @@ bindsym $mod+x exec --no-startup-id xfdesktop --menu
 exec --no-startup-id xfdesktop --disable-wm-check &
 exec_always --no-startup-id ~/scripts/wmctrl &
 
-
-#pcmanfm background - For AUTOMOUNT devices
-#exec --no-startup-id pcmanfm -d
-
+# Maroto livecd
+bindsym $mod+i exec --no-startup-id tilix -e sudo /abif-master/abif_offline
+bindsym $mod+o exec --no-startup-id "sudo cnchi &"
 exec --no-startup-id "dconf load / < tilix.dconf"
