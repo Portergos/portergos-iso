@@ -1,11 +1,15 @@
+PORTERGOS (Portable Antergos) i3/Xfce4/Openbox - Offline/Online installer UNOFFICIAL
+
+EDIT November 30 2017 - I decided to rename the system to Portergos, sounds nice and cover it’s purpose.
+
 Ever need to install Antergos offline? With this ISO your needs are met!
 
-This is an UNOFFICIAL iso. It’s build using mkarchiso and use both Antergos and Archlinux repositories
+This is PORTERGOS (Portable Antergos). It’s build using mkarchiso and uses Portergos + Antergos + Archlinux repositories
 
-VERSION October 06th 2017
+VERSION November 30 2017
 Download
-iso http://www.mediafire.com/file/84mvipyn60i72tm/maroto-2017.10.06-x86_64.iso
-md5sum http://www.mediafire.com/file/pig253x2c2iv23z/md5sum.txt
+iso https://github.com/Portergos/portergos-iso/releases/download/iso_02_12_2017/portergos-2017.12.02-x86_64.iso
+md5sum https://github.com/Portergos/portergos-iso/releases/download/iso_02_12_2017/portergos-2017.12.02.md5sum
 
 Purposes of the iso:
 
@@ -13,16 +17,25 @@ Easy experince using
 i3-wm
 Xfce4
 Openbox
-* The system will install the all 3 desktops
-** At livecd, use "desktop switcher" at xfce4 panel to switch desktop (i3, openbox, xfce4) 
 
+The system will install all 3 desktops
+** At livecd, use “Oblogout” at xfce4 panel to switch desktop (close the session and login with wm of your choice)
 Ergonomic tools (easystroke)
-Use Archlinux + Antergos repositories
+Use Portergos + Antergos + Archlinux repositories
 Yaourt installed by default (AUR repositories)
 Offline installer (modified from Pacbang linux) - Now also have online install options
 Another online installer (Cnchi from Antergos)
 Minimum systemd load after install (internet, cups, avahi, vboxservice and sddm) PC uses less ram memory
 Use both iso/installed system as installer for others devices
+
+GRUB better configurated after install wich has the following options:
+Arch LTS kernel
+Arch LTS kernel falback
+Arch
+Arch falback
+Arch LTS - Terminal Login
+reboot
+poweroff
 
 Themes
 Arc-dark
@@ -40,7 +53,6 @@ Others
 
 Security
 ClamAV installed and some basic scripts for using it
-Firejail (Opera and Firefox are set to start using firejail, changed in /usr/share/applications)
 
 Games
 Wine+Playonlinux
@@ -48,12 +60,12 @@ Steam
 
 Scripts
 scripts folder at ~/scripts
-a) script clamav.sh
+a) script clamav
 
 Script for using clamav, features are commented, you should open with any text editor and uncomment what you need. Every scan will generate a log for you to analyze the scan
 Added update and scan at context menu from nemo
 
-b) script xfce4.sh
+b) script xfce4
 My own script for starting and killing xfce4-panel (show/hide style, but using less resources)
 
 c) Xfdesktop
@@ -62,11 +74,8 @@ Very usefull to launch programs and logoff
 
 d) Compressor
 Created to use maximum compresison rate, you can choose 4 different methods (7z and tar.xz are the best)
-Can be launched with alias "comp" in terminal or $mod+Ctrl+c under i3wm
+Can be launched with alias “comp” in terminal or $mod+Ctrl+c under i3wm
 Added at context menu from nemo also
-
-e) Switch_session
-Only for livecd. Use to switch desktop (i3, openbox, xfce4). Available at xfce4 panel.
 
 Others
 Oblogout for logoff
@@ -75,12 +84,12 @@ Redshift for eyes confort
 Conky manager
 Xed as text editor
 Nemo as file manager (contains clamav script for update and scan)
-Downgrader - AUR repo
-Caffeine-ng - AUR repo
+Downgrader - Portergos repo
+Caffeine-ng - Portergos repo
 
 OBS1: Options inside offline installer
 
-Install ISO with it’s configs
+Install ISO with it’s configs (uses unsquashfs method, faster install)
 Install from already installed USB/HD OR keep changed files
 Online installer - Must edit packages_pacman.txt and packages_yaourt.txt at /abif-master
 3.1) Use pacstrap only to download and install	
@@ -90,6 +99,11 @@ OBS2: It’s also possible to run Cnchi installer to have an Antergos desktop wi
 You can run both offline and cnchi installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
 
 OLD VERSIONS
+
+VERSION October 06th 2017
+Download
+iso http://www.mediafire.com/file/84mvipyn60i72tm/maroto-2017.10.06-x86_64.iso
+md5sum http://www.mediafire.com/file/pig253x2c2iv23z/md5sum.txt
 
 VERSION September 12th 2017
 Download
@@ -129,19 +143,22 @@ re
 Or to do both just type:
 u
 
+TODO: Correct German translation (the current used an online translator English-German)
+I’m currently packing some stuff i like and adding to repo, for example some themes that can be found on AUR and some only in the internet or other OSes.
+Clean the installer and make it faster.
+
 Credits:
 
-Developer and Maintainer: Fernando maroto
+Developer and Maintainer: Fernando maroto
 
-Antergos forum https://forum.antergos.com/topic/7655/unofficial-i3-wm-iso-with-offline-and-online-installer
+Antergos forum https://forum.antergos.com/topic/7655/unofficial-i3-wm-iso-with-offline-and-online-installer
 
 More info at github https://github.com/marotinhodimais/Maroto-iso
 
+Tester: Fernando maroto
 
-Tester: Fernando maroto
-
-Advisors: Joe Kamprad http://kamprad.net
-          Velkerk
+Advisors: Joe Kamprad http://kamprad.net
+Velkerk
 
 Also thanks to:
 Keegan for uploading the iso at https://antergoscommunityeditions.wordpress.com/
