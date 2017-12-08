@@ -38,7 +38,7 @@ TRANS_SRC="/abif-master"							# Dir where translation files are stored
 
 # Create a temporary file to store menu selections
 ANSWER="/tmp/.abif"
-
+#
 # Installation
 BOOTLOADER="n/a"      								# Which bootloader has been installed?
 KEYMAP="us"          								# Virtual console keymap. Default is "us"
