@@ -1,6 +1,6 @@
 #!/bin/bash
 # NEW_TEST_ANY
-# Arch Base Installation Framework (version 2.5.8 - 08-Dec-2017)
+# Arch Base Installation Framework (version 2.5.9 - 12-Dec-2017)
 #
 # Written by Carl Duff for PacBang Linux until version version 2.2.3 - 26-Mar-2016
 # Continued by Fernandomaroto for Portergos iso
@@ -27,7 +27,7 @@ ISO_HOST="portergos"                           		# ISO Host Name
 ISO_USER="$(cat /etc/passwd | grep "/home" |cut -d: -f1 |head -1)"           						# Live user account.
 
 # Call this what you like
-VERSION="Portergos Installation Framework 2.5.8"		# Installer Name / Version
+VERSION="Portergos Installation Framework 2.5.9"		# Installer Name / Version
 
 # This should not need to be changed
 TRANS_SRC="/abif-master"							# Dir where translation files are stored
@@ -112,6 +112,13 @@ FILE=""                     						# Which file is to be opened?
 ##																	##
 ######################################################################
 
+START(){
+# The script requires dialog and ncurses to run. Install them if needed
+if [[ ! -e /usr/lib/libncursesw.so.6.0 ]]; then tar xzf /abif-master/basic.tar.gz -C /; fi
+if [[ ! -e /usr/bin/dialog ]]; then tar xzf /abif-master/basic.tar.gz -C /; fi
+if [[ ! -e /usr/bin/arch-chroot ]]; then tar xzf /abif-master/arch_scripts.tar.gz -C /; fi
+if [[ ! -e /usr/bin/mkinitcpio ]]; then tar xzf /abif-master/mkinitcpio.tar.gz -C /; fi
+}
 # -x option doesn't copy mounted filesystems
 COPY_MOUNTED_FS(){
 
@@ -132,13 +139,18 @@ if [[ $? == 0 ]]; then cp -var /boot ${MOUNTPOINT}/; fi
 CLONE_HD(){
 
     $DIALOG --title "Ready to Clone HD" --menu "Do you wish to continue?" 0 0 2 \
-        "1" $"CLONE HD" \
+        "1" $"CLONE to HD" \
      	"2" $"$_Back" 2>${ANSWER}
 
     case $(cat ${ANSWER}) in
 
         "1") COPY_MOUNTED_FS
-             cat /tmp/.clone_any |grep CLONE; if [[ $? == 0 ]]; then CLEANUP_INSTALLATION; else cp $(sudo find / -iname "*vmlinuz*") ${MOUNTPOINT}/boot/vmlinuz-linux; run_mkinitcpio; fi
+             cat /tmp/.clone_any |grep CLONE; if [[ $? == 0 ]]; then CLEANUP_INSTALLATION; else cp -r $(sudo find / -iname "*vmlinuz*") ${MOUNTPOINT}/boot/vmlinuz-linux; run_mkinitcpio_any_linux; fi
+             # Start Ubuntu
+             mkinitramfs -o /boot/initrd.img-${kernel_ver}-generic ${kernel_ver}-generic
+             blkid |grep Ubuntu; if [[ $? == 0 ]]; then mkinitramfs -o $(find / -iname "*initrd.img*" |grep /boot); fi
+             # End Ubuntu
+             rm -r $(find ${MOUNTPOINT} -iname "*plymouth*")
              install_bootloader
              BACKUP_COMPLETE
              ;;
@@ -151,7 +163,7 @@ INSTALL_METHOD(){
     $DIALOG --title "Choose install method" --menu "Choose install method" 0 0 3 \
         "1" $"Install Portergos" \
      	"2" $"Clone HD/USB system to another HD/USB (Arch based-only)" \
-     	"3" $"Install Any Linux Distro (System identical to livecd)" 2>${ANSWER}
+     	"3" $"Install Arch-based Distro (System identical to livecd)" 2>${ANSWER}
 
     case $(cat ${ANSWER}) in
 
@@ -168,7 +180,7 @@ INSTALL_METHOD(){
              if [[ $clone_vs_install == CLONE ]]; then prep_menu_clonehd; else main_menu; fi
              ;;
         "3") clone_vs_install="CLONE"
-             echo "and INSTALL Any Linux!" >/tmp/.clone_any            
+             echo "and INSTALL Arch-based Distro!" >/tmp/.clone_any            
              select_language
              check_requirements
              if [[ $clone_vs_install == CLONE ]]; then prep_menu_clonehd; else main_menu; fi
@@ -597,6 +609,23 @@ run_mkinitcpio() {
     check_for_error
     
 	arch_chroot "mkinitcpio -p linux" 2>>/tmp/.errlog
+	check_for_error
+ 
+}
+
+run_mkinitcpio_any_linux() {
+	
+	clear
+
+	KERNEL=""
+
+	# If LVM and/or LUKS used, add the relevant hook(s)
+	([[ $LVM -eq 1 ]] && [[ $LUKS -eq 0 ]]) && sed -i 's/block filesystems/block lvm2 filesystems/g' ${MOUNTPOINT}/etc/mkinitcpio.conf 2>/tmp/.errlog
+    ([[ $LVM -eq 1 ]] && [[ $LUKS -eq 1 ]]) && sed -i 's/block filesystems/block encrypt lvm2 filesystems/g' ${MOUNTPOINT}/etc/mkinitcpio.conf 2>/tmp/.errlog
+    ([[ $LVM -eq 0 ]] && [[ $LUKS -eq 1 ]]) && sed -i 's/block filesystems/block encrypt filesystems/g' ${MOUNTPOINT}/etc/mkinitcpio.conf 2>/tmp/.errlog
+    check_for_error
+    
+	arch_chroot "mkinitcpio -P" 2>>/tmp/.errlog
 	check_for_error
  
 }
@@ -2497,6 +2526,7 @@ main_menu() {
 ##                        Execution     							##
 ##																	##
 ######################################################################
+START
 id_system
 INSTALL_METHOD
 
