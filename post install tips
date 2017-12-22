@@ -1,3 +1,5 @@
+Scripts at /home/$USER/scripts
+
 Useful alias located at /home/$USER/.bashrc_portergos
 
 To use key-init, refresh gpg signatures etc, just type: up
