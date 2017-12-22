@@ -9,8 +9,8 @@ Offline + Online installer
 
 Installers
 
-	Portergos
-	Install Portergos (offline and online) 
+Portergos
+Install Portergos (offline and online) 
 Clone from HD/USB to another HD/USB
 Install another distro from livecd (under testing, make persistence of livecd)
 
