@@ -1,0 +1,7 @@
+Correct German translation (the current used an online translator English-German)
+
+I’m currently packing some stuff i like and adding to repo, for example some themes that can be found on AUR and some only in the internet or other OSes.
+
+Clean the installer and make it faster. Port it to yad instead of dialog.
+
+Add support to all Ubuntu-based distros
