@@ -100,28 +100,6 @@ OBS2: It’s also possible to run Cnchi installer to have an Antergos desktop wi
 
 You can run both offline and cnchi installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
 
-OLD VERSIONS
-
-VERSION October 06th 2017
-Download
-iso http://www.mediafire.com/file/84mvipyn60i72tm/maroto-2017.10.06-x86_64.iso
-md5sum http://www.mediafire.com/file/pig253x2c2iv23z/md5sum.txt
-
-VERSION September 12th 2017
-Download
-iso http://www.mediafire.com/file/5uukzc1j2b8i5id/maroto-2017.09.13-x86_64.iso
-md5sum http://www.mediafire.com/file/yus4ykp4ahqd0p4/md5sum.txt
-
-VERSION - August 17th 2017:
-Download
-iso http://www.mediafire.com/file/pbhj95o02b5fma1/maroto_1.1_cnchi_0.3_2017.08.17-x86_64.iso
-md5sum http://www.mediafire.com/file/x5lw78qdg290gft/md5sum.txt
-
-OLD VERSION (with pcmanfm bug and without cnchi installer):
-Download
-iso http://www.mediafire.com/file/a97am25wniffvr8/beta_1.1_maroto-2017.08.10-x86_64.iso
-md5sum http://www.mediafire.com/file/o8i8rpqcce0eeig/md5sum.txt
-
 It’s still under development, so use at your own risk. Also feel free to report bugs, needed packages, complains etc :p Made using the original archiso tool
 
 More info
