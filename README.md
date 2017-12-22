@@ -30,36 +30,36 @@ Desktops
 - Openbox
 
 Kernels
-Vanilla
-LTS
-DKMS
+- Vanilla
+- LTS
+- DKMS
 
 
 Packages
-xed
-libreoffice
-opera
-firefox
-easystroke
-yaourt
-oblogout
-zim
-redshift
-sddm
-ClamAV
-Wine+Playonlinux
-Steam
+- xed
+- libreoffice
+- opera
+- firefox
+- easystroke
+- yaourt
+- oblogout
+- zim
+- redshift
+- sddm
+- ClamAV
+- Wine+Playonlinux
+- Steam
 
 Themes
-Arc-dark
-Numix-solarized
-Adapta-Nokto
-AeeZee
-Ambiant-Mate-Dark
+- Arc-dark
+- Numix-solarized
+- Adapta-Nokto
+- AeeZee
+- Ambiant-Mate-Dark
 
 Icons
-Vivacious
-Zoncolor
-Arc
+- Vivacious
+- Zoncolor
+- Arc
 
 **For a full list of packages check packages.both https://github.com/Portergos/portergos-iso/blob/master/packages.both
