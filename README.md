@@ -9,13 +9,13 @@ Offline + Online installer
 
 Installers
 
--Portergos
-  -Install Portergos (offline and online) 
-  -Clone from HD/USB to another HD/USB
-  -Install another distro from livecd (under testing, make persistence of livecd)
+\Portergos
+\Install Portergos (offline and online) 
+Clone from HD/USB to another HD/USB
+Install another distro from livecd (under testing, make persistence of livecd)
 
--Antergos
-  -Cnchi installer (online)
+Antergos
+Cnchi installer (online)
 
 ** You can run both Portergos and Atergos installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
 
