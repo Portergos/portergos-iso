@@ -7,7 +7,7 @@ Offline + Online installer
 
 ![portergos_view](https://user-images.githubusercontent.com/18373928/34307317-ac1e4168-e72e-11e7-98b6-63afaf38c418.png)
 
-Installers:
+Installers
 Portergos
 Install Portergos (offline and online) 
 Clone from HD/USB to another HD/USB
@@ -23,12 +23,12 @@ December 02 2017
 iso https://github.com/Portergos/portergos-iso/releases/download/iso_02_12_2017/portergos-2017.12.02-x86_64.iso
 md5sum https://github.com/Portergos/portergos-iso/releases/download/iso_02_12_2017/portergos-2017.12.02.md5sum
 
-Desktops:
+Desktops
 i3-wm
 Xfce4
 Openbox
 
-Kernels:
+Kernels
 Vanilla
 LTS
 DKMS
