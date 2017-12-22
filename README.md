@@ -1,4 +1,6 @@
-PORTERGOS (Portable Antergos) i3/Xfce4/Openbox - Offline/Online installer UNOFFICIAL
+PORTERGOS (Portable Antergos) i3/Xfce4/Openbox - Offline/Online installer
+
+![portergos_view](https://user-images.githubusercontent.com/18373928/34307317-ac1e4168-e72e-11e7-98b6-63afaf38c418.png)
 
 EDIT November 30 2017 - I decided to rename the system to Portergos, sounds nice and cover it’s purpose.
 
