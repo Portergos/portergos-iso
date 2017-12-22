@@ -126,20 +126,3 @@ u
 TODO: Correct German translation (the current used an online translator English-German)
 I’m currently packing some stuff i like and adding to repo, for example some themes that can be found on AUR and some only in the internet or other OSes.
 Clean the installer and make it faster.
-
-Credits:
-
-Developer and Maintainer: Fernando maroto
-
-Antergos forum https://forum.antergos.com/topic/7655/unofficial-i3-wm-iso-with-offline-and-online-installer
-
-More info at github https://github.com/marotinhodimais/Maroto-iso
-
-Tester: Fernando maroto
-
-Advisors: Joe Kamprad http://kamprad.net
-Velkerk
-
-Also thanks to:
-Keegan for uploading the iso at https://antergoscommunityeditions.wordpress.com/
-Carl Duff for developing the first offline installer for Architect and PacBang (untill version 2.2.3 - 26-Mar-2016)
