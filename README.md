@@ -9,12 +9,12 @@ Offline + Online installer
 
 Installers:
 Portergos
-    Install Portergos (offline and online) 
-    Clone from HD/USB to another HD/USB
-    Install another distro from livecd (under testing, make persistence of livecd)
+Install Portergos (offline and online) 
+Clone from HD/USB to another HD/USB
+Install another distro from livecd (under testing, make persistence of livecd)
 
 Antergos
-    Cnchi installer (online)
+Cnchi installer (online)
 
 ** You can run both Portergos and Atergos installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
 
@@ -24,14 +24,14 @@ iso https://github.com/Portergos/portergos-iso/releases/download/iso_02_12_2017/
 md5sum https://github.com/Portergos/portergos-iso/releases/download/iso_02_12_2017/portergos-2017.12.02.md5sum
 
 Desktops:
-    i3-wm
-    Xfce4
-    Openbox
+i3-wm
+Xfce4
+Openbox
 
 Kernels:
-    Vanilla
-    LTS
-    DKMS
+Vanilla
+LTS
+DKMS
 
 
 Packages
