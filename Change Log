@@ -1,0 +1,6 @@
+Jan, 06, 2017
+Iso now has vanilla kernel and also LTS to help people with difficult booting the iso.
+The installer is also improved a little, if user has internet the system will try to autodetect some keyboard, keymaps and locale info.
+Removed `firefox` and added `light_firefox`.
+Both opera and light_firefox come with extensions.
+Personalized wallpaper for booting the iso, grub and desktop (for i3-wm and xfce4, i forgot to set on openbox) and portergos icon at panel.
