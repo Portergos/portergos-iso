@@ -67,4 +67,17 @@ Icons
 - Zoncolor
 - Arc
 
+
+Dogecoin
+
+
+DQup9dYh2tQPnTT1gaK9qWRo5DcrMmbrkY
+
+
+Bitcoin
+
+
+1L6UiRZZCSoMFeoDtecX2U7Ppop4AFcKeC
+
+
 **For a full list of packages check packages.both https://github.com/Portergos/portergos-iso/blob/master/packages.both
