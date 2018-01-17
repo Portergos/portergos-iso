@@ -67,6 +67,8 @@ Icons
 - Zoncolor
 - Arc
 
+If you want to donate:
+
 
 Dogecoin
 
