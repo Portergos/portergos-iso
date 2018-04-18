@@ -20,13 +20,13 @@ Cnchi installer (online)
 ** You can run both Portergos and Atergos installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
 
 
-Download March 05 2018
+Download April 05 2018
 
 
-https://github.com/Portergos/portergos-iso/releases/download/iso_mar_05_2018/portergos-2018.03.05-x86_64.iso
+https://github.com/Portergos/portergos-iso/releases/download/iso_apr_17_2018/portergos-2018.04.17-x86_64.iso
 
 
-https://github.com/Portergos/portergos-iso/releases/download/iso_mar_05_2018/portergos-2018.03.05-x86_64.md5sum
+https://github.com/Portergos/portergos-iso/releases/download/iso_apr_17_2018/portergos-2018.04.17-x86_64.md5sum
 
 
 Desktops
