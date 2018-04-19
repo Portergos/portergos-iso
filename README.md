@@ -23,10 +23,10 @@ Cnchi installer (online)
 Download April 05 2018
 
 
-https://github.com/Portergos/portergos-iso/releases/download/iso_apr_17_2018/portergos-2018.04.17-x86_64.iso
+https://github.com/Portergos/portergos-iso/releases/download/iso_apr_18_2018/portergos-2018.04.18-x86_64.iso
 
 
-https://github.com/Portergos/portergos-iso/releases/download/iso_apr_17_2018/portergos-2018.04.17-x86_64.md5sum
+https://github.com/Portergos/portergos-iso/releases/download/iso_apr_18_2018/portergos-2018.04.18-x86_64.md5sum
 
 
 Desktops
