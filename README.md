@@ -21,7 +21,7 @@ Install another distro from livecd (under testing, make persistence of livecd)
 Antergos
 Cnchi installer (online)
 ```
-** You can run both Portergos and Atergos installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
+** You can run both Portergos and Antergos installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
 
 
 Download May 2018
