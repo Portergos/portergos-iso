@@ -4,6 +4,8 @@ Repositories:
 Portergos + Antergos + Archlinux
 
 Offline + Online installer
+
+
 Persistence mode when portergos copied using dd, see turorial
 https://github.com/Portergos/Youtube-notes/blob/master/003%20portergos_persistent
 
