@@ -4,6 +4,8 @@ Repositories:
 Portergos + Antergos + Archlinux
 
 Offline + Online installer
+Persistence mode when portergos copied using dd, see turorial
+https://github.com/Portergos/Youtube-notes/blob/master/003%20portergos_persistent
 
 ![portergos_view](https://user-images.githubusercontent.com/18373928/34307317-ac1e4168-e72e-11e7-98b6-63afaf38c418.png)
 
@@ -20,14 +22,10 @@ Cnchi installer (online)
 ** You can run both Portergos and Atergos installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
 
 
-Download April 05 2018
+Download May 2018
 
-
-https://github.com/Portergos/portergos-iso/releases/download/iso_apr_18_2018/portergos-2018.04.18-x86_64.iso
-
-
-https://github.com/Portergos/portergos-iso/releases/download/iso_apr_18_2018/portergos-2018.04.18-x86_64.md5sum
-
+https://github.com/Portergos/portergos-iso/releases/download/iso_may_2018/portergos.7z
+*Compressed file contains iso and md5sum
 
 Desktops
 - i3-wm
