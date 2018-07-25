@@ -9,7 +9,13 @@ Offline + Online installer
 Persistence mode when portergos copied using dd, see turorial
 https://github.com/Portergos/Youtube-notes/blob/master/003%20portergos_persistent
 
+
+Youtube chanel
+https://www.youtube.com/channel/UC23hIykhsuJe_t8OOd45WVA
+
+
 ![portergos_view](https://user-images.githubusercontent.com/18373928/34307317-ac1e4168-e72e-11e7-98b6-63afaf38c418.png)
+
 
 Installers
 ```
@@ -24,9 +30,9 @@ Cnchi installer (online)
 ** You can run both Portergos and Antergos installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
 
 
-Download May 2018
+Download Jul 2018
 
-https://github.com/Portergos/portergos-iso/releases/download/iso_may_2018/portergos.7z
+https://github.com/Portergos/portergos-iso/releases/download/iso_jul_2018/portergos-2018.07.15-x86_64_persistence.tar.xz
 *Compressed file contains iso and md5sum
 
 Desktops
