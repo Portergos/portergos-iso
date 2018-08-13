@@ -19,5 +19,5 @@ SigLevel = PackageRequired
 Include = /etc/pacman.d/portergos_any-mirrorlist
 
 
-Save the file and update your system with `sudo pacman -Syyu`
+Save the file and update your system with sudo pacman -Syyu
 Done!
