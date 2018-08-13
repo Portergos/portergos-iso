@@ -1,3 +1,5 @@
+WARNING For people still using the old Portergos repository, follow instructions to make the transition here https://github.com/Portergos/portergos-iso/blob/master/instructions_new_repository
+
 Portergos (Portable Antergos)
 
 Repositories:
