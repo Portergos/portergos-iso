@@ -1,0 +1,23 @@
+Migrate from old to new repositories
+
+Please know that the old repository is unmantained, and there are some erros relating packages.
+
+3 new repositories were created, and in 64 bits systems a transition is needed.
+
+1) First of all, you need to manually remove the old portergos repository from `/etc/pacman.conf`. Open the file with sudo or as root and remove Portergos repository. Save the file.
+
+2) Downlad the script from https://github.com/Portergos/portergos-iso/blob/master/fix_repository_definitive and run it as sudo or root.
+
+3) Add the new repositories to `/etc/pacman.conf`.
+```
+[portergos_64]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/portergos-mirrorlist
+
+[portergos_any]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/portergos_any-mirrorlist
+```
+
+Save the file and update your system with `sudo pacman -Syyu`
+Done!
