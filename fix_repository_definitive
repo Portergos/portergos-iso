@@ -1,0 +1,99 @@
+#!/bin/bash
+
+# Fix portergos repository
+
+# Warn user about changing pacman.conf
+echo -e "First of all, you need to manually remove the old portergos repository from /etc/pacman.conf"
+
+sleep 2
+
+# Files are downloaded to /tmp folder
+cd /tmp
+
+# Warn about removing old databse
+echo -e "Removing old portergos database"
+sleep 2
+
+if [[ -e /var/lib/pacman/sync/portergos.db ]] && [[ -e /var/lib/pacman/sync/portergos.db.sig ]]; then sudo rm /var/lib/pacman/sync/portergos.db; sudo rm /var/lib/pacman/sync/portergos.db.sig; fi
+
+# Warn about downloading new packages
+echo -e "Downloading new keyring and mirrorlists"
+sleep 2
+
+if [[ ! -e /tmp/portergos-keyring-1-1-any.pkg.tar.xz ]]; then wget https://github.com/Portergos/portergos_repository_any/releases/download/portergos_any/portergos-keyring-1-1-any.pkg.tar.xz; wget https://github.com/Portergos/portergos_repository_any/releases/download/portergos_any/portergos-keyring-1-1-any.pkg.tar.xz.sig; fi
+
+if [[ ! -e /tmp/portergos_any-mirrorlist-1-2-any.pkg.tar.xz ]]; then wget https://github.com/Portergos/portergos_repository_any/releases/download/portergos_any/portergos_any-mirrorlist-1-2-any.pkg.tar.xz; wget https://github.com/Portergos/portergos_repository_any/releases/download/portergos_any/portergos_any-mirrorlist-1-2-any.pkg.tar.xz.sig; fi
+
+if [[ ! -e /tmp/portergos-mirrorlist-1-2-any.pkg.tar.xz ]]; then wget https://github.com/Portergos/portergos_repository_64_bits/releases/download/portergos_64/portergos-mirrorlist-1-2-any.pkg.tar.xz; wget https://github.com/Portergos/portergos_repository_64_bits/releases/download/portergos_64/portergos-mirrorlist-1-2-any.pkg.tar.xz.sig; fi
+
+
+
+#[portergos_64]
+#SigLevel = PackageRequired
+#Include = /etc/pacman.d/portergos-mirrorlist
+
+#[portergos_any]
+#SigLevel = PackageRequired
+#Include = /etc/pacman.d/portergos_any-mirrorlist
+
+gpg --recv-key 4F4B983A
+
+echo -e "Time to install the new keyring and mirrorlists"
+
+# Check file signature and install packages
+LANG=C gpg --verify portergos_any-mirrorlist-1-2-any.pkg.tar.xz.sig portergos_any-mirrorlist-1-2-any.pkg.tar.xz &> /tmp/.files
+cat /tmp/.files |grep "Good signature"
+if [[ $? == 0 ]]; then echo "File signature is fine!"; sudo pacman -U portergos_any-mirrorlist-1-2-any.pkg.tar.xz; else echo "Signature error, try again!"; fi
+#
+LANG=C gpg --verify portergos-keyring-1-1-any.pkg.tar.xz.sig portergos-keyring-1-1-any.pkg.tar.xz &> /tmp/.files
+cat /tmp/.files |grep "Good signature"
+if [[ $? == 0 ]]; then echo "File signature is fine!"; sudo pacman -U portergos-keyring-1-1-any.pkg.tar.xz; else echo "Signature error, try again!"; fi
+#
+LANG=C gpg --verify portergos-mirrorlist-1-2-any.pkg.tar.xz.sig portergos-mirrorlist-1-2-any.pkg.tar.xz &> /tmp/.files
+cat /tmp/.files |grep "Good signature"
+if [[ $? == 0 ]]; then echo "File signature is fine!"; sudo pacman -U portergos-mirrorlist-1-2-any.pkg.tar.xz; else echo "Signature error, try again!"; fi
+
+# For interested users
+#sudo haveged -w 1024
+sudo pacman-key --init
+sudo pacman-key --populate
+#sudo pacman-key --refresh-keys
+#sudo pkill haveged
+#sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+#sudo reflector --verbose --age 8 --fastest 128 --latest 64 --number 32 --sort rate --save /etc/pacman.d/mirrorlist
+sudo pacman -Syy
+
+
+#######     WARNING     !!!    #######
+# Case someone reads this script to add the repositories, just copy/paste the repos bellow and uncomment then at /etc/pacman.conf
+
+#[portergos_64]
+#SigLevel = PackageRequired
+#Include = /etc/pacman.d/portergos-mirrorlist
+
+#[portergos_any]
+#SigLevel = PackageRequired
+#Include = /etc/pacman.d/portergos_any-mirrorlist
+
+
+
+# Warn to add new repos
+echo "Now you need to manually add to /etc/pacman.conf 2 new repositories with the following lines"
+echo -e "\n"
+echo -e "\n"
+
+echo -e "[portergos_64]"
+echo -e "SigLevel = PackageRequired"
+echo -e "Include = /etc/pacman.d/portergos-mirrorlist"
+
+echo -e "\n"
+echo -e "\n"
+
+echo -e "[portergos_any]"
+echo -e "SigLevel = PackageRequired"
+echo -e "Include = /etc/pacman.d/portergos_any-mirrorlist"
+
+sleep 5
+echo -e "Procedure completed"
+echo -e "Now you can update your system"
+sleep 5
