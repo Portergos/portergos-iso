@@ -1,12 +1,16 @@
 WARNING For people still using the old Portergos repository, follow instructions to make the transition here https://github.com/Portergos/portergos-iso/blob/master/instructions_new_repository
 
-Portergos (Portable Antergos)
+I'm simplifying Portergos iso, basically removing stuff. I believe K.I.S.S filosophy is the best for an "one man made distro"
+The offline installer is maintained, all others were removed. Openbox will still be installed, but only xfce4 and i3 will be available at the welcome screen.
+
+I'm also working to have calamares installer, which i hope in the future may contain online and offline installer with a nice simple interface.
+
+Portergos (Portable Antergos) - Though Antergos distro is ending, i'm keeping the name, perhaps in the future will be called "Posterus" which means "future" in Latin and have a very similar name.
 
 Repositories:
-Portergos + Antergos + Archlinux
+Portergos + Archlinux
 
-Offline + Online installer
-
+Offline installer
 
 Persistence mode when portergos copied using dd, see turorial
 https://github.com/Portergos/Youtube-notes/blob/master/003%20portergos_persistent
@@ -17,20 +21,6 @@ https://www.youtube.com/channel/UC23hIykhsuJe_t8OOd45WVA
 
 
 ![portergos_view](https://user-images.githubusercontent.com/18373928/34307317-ac1e4168-e72e-11e7-98b6-63afaf38c418.png)
-
-
-Installers
-```
-Portergos
-Install Portergos (offline and online) 
-Clone from HD/USB to another HD/USB
-Install another distro from livecd (under testing, make persistence of livecd)
-
-Antergos
-Cnchi installer (online)
-```
-** You can run both Portergos and Antergos installers from the installed system, that means you can spread this OS system everywhere with a USB drive (when installed offline version)
-
 
 Download Aug 2018
 
