@@ -1,3 +1,10 @@
+Jun, 01, 2019
+
+Offline installer has cleaner scripts, installing filesystem runs in the background while user add his system configs (save time during install)
+All online installers were purged.
+Some packages are being removed to make the iso even more light
+Persistence added and fully tested when using dd command. (it's possible to boot using Legacy BIOS, EFI and saving data on the go!)
+
 Jan, 06, 2018
 Iso now has vanilla kernel and also LTS to help people with difficult booting the iso.
 The installer is also improved a little, if user has internet the system will try to autodetect some keyboard, keymaps and locale info.
