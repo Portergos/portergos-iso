@@ -9,7 +9,7 @@ Openbox will still be installed, but only xfce4 and i3 will be available at the 
 I'm also working to have calamares installer, which i hope in the future may contain online and offline installer with a nice simple interface.
 
 Repositories:
-Archlinux + Portergos
+Archlinux only
 
 Offline installer
 
